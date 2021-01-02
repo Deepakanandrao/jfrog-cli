@@ -1,0 +1,16 @@
+# action.yaml
+name: "JFrog CLI"
+description: "Connects to JFrog Artifactory and executes JFrog CLI commands"
+author: "Deep Anandrao"
+branding:
+    icon: "command"
+    color: "orange"
+inputs:
+  cli_cmd:
+    description: 'Jfrog Artifactory cli command e.g.  `jfrog rt ping`'
+    required: false
+runs:
+    using: "docker"
+    image: "Dockerfile"
+    args: 
+        - ${{ inputs.cli_cmd }}
