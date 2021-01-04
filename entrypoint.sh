@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+
 #Starting shell scripts with set -e is considered a best practice,
 #since it is usually safer to abort the script if some error occurs. 
 #If a command may fail harmlessly,
