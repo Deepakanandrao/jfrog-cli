@@ -30,7 +30,7 @@ inputs:
         description: "Leave blank is using apikey or access-token"
         required: false
 
-    API_key:
+    access_token:
         description: "Leave blank is using password"
         required: false
 
