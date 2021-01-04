@@ -28,7 +28,7 @@ set -e
 
 # sudo apt install -y jfrog-cli
 
-if ! ["$INPUT_SERVER_ID"] 
+if ! [$INPUT_SERVER_ID] 
     then
         $INPUT_SERVER_ID = "JFrog Artifactory Server"
 fi
