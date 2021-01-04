@@ -6,33 +6,33 @@ branding:
     color: "orange"
 description: "Connects to JFrog Artifactory and executes JFrog CLI commands"
 inputs:
-    server_id:
-        description: "Server to be identified with. Default - JFrog Artifactory Server"
-        required: false
+#     server_id:
+#         description: "Server to be identified with. Default - JFrog Artifactory Server"
+#         required: false
 
-    server_url:
-        description: "Your Jfrog Artifactory Server url"
-        required: true
+#     server_url:
+#         description: "Your Jfrog Artifactory Server url"
+#         required: true
 
-    distribution_url:
-        description: " Distribution URL. Default - none"
-        required: false
+#     distribution_url:
+#         description: " Distribution URL. Default - none"
+#         required: false
 
-    access_type:
-        description: "Leave blank for username and password or apikey for api key "
-        required: true
+#     access_type:
+#         description: "Leave blank for username and password or apikey for api key "
+#         required: true
 
-    username:
-        description: "Leave blank for access-token or apikey for api key "
-        required: true
+#     username:
+#         description: "Leave blank for access-token or apikey for api key "
+#         required: true
 
-    Password:
-        description: "Leave blank is using apikey or access-token"
-        required: false
+#     Password:
+#         description: "Leave blank is using apikey or access-token"
+#         required: false
 
-    access_token:
-        description: "Leave blank is using password"
-        required: false
+#     access_token:
+#         description: "Leave blank is using password"
+#         required: false
 
     cli_cmd:
         description: "JFrog artifactory CLI commands to be executed"
@@ -47,12 +47,4 @@ runs:
     using: "docker"
     image: "Dockerfile"
     args:
-        - ${{ inputs.server_id }}
-        - ${{ inputs.server_url }}
-        - ${{ inputs.distribution_url }}
-        - ${{ inputs.access_type }}
-        - ${{ inputs.username }}
-        - ${{ inputs.password }}
-        - ${{ inputs.access_token }}
-        - ${{ inputs.api_key }}
         - ${{ inputs.cli_cmd }}
