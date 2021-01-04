@@ -3,7 +3,7 @@ name: "JFrog CLI"
 author: "Deep Anandrao"
 branding:
     icon: "command"
-    color: "green"
+    color: "orange"
 description: "Connects to JFrog Artifactory and executes JFrog CLI commands"
 inputs:
     server_id:
