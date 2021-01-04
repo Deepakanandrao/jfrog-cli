@@ -33,14 +33,14 @@ if ! ["$INPUT_SERVER_ID"]
         $INPUT_SERVER_ID = "JFrog Artifactory Server"
 fi
 
-if ["$INPUT_SERVER_URL" && "$INPUT_ACCESS_TYPE" && (("$INPUT_USERNAME" && "$INPUT_PASSWORD") || "$INPUT_API_KEY" || "$INPUT_ACCESS_TOKEN")] 
+if ["$INPUT_SERVER_URL" && "$INPUT_ACCESS_TYPE" && (("$INPUT_USERNAME" && "$INPUT_PASSWORD") || "$INPUT_ACCESS_TOKEN")] 
 then
     if [$INPUT_ACCESS_TYPE == 'username-password']
     then 
         jfrog rt c "$INPUT_SERVER_ID" --interactive=false --basic-auth-only=true --url="$INPUT_SERVER_URL" --user="$INPUT_USERNAME" --password="$INPUT_PASSWORD"
-    elif [$INPUT_ACCESS_TYPE == 'api-key']
-    then
-        jfrog rt c "$INPUT_SERVER_ID" --interactive=false --basic-auth-only=true --url="$INPUT_SERVER_URL" --apikey="$INPUT_API_KEY"
+#     elif [$INPUT_ACCESS_TYPE == 'api-key']
+#     then
+#         jfrog rt c "$INPUT_SERVER_ID" --interactive=false --basic-auth-only=true --url="$INPUT_SERVER_URL" --apikey="$INPUT_API_KEY"
     elif [$INPUT_ACCESS_TYPE == 'access-token']
     then 
         echo jfrog rt c "$INPUT_SERVER_ID" --interactive=false --basic-auth-only=true --url="$INPUT_SERVER_URL" --access-token="$INPUT_API_KEY"
