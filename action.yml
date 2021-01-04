@@ -47,12 +47,12 @@ runs:
     using: "docker"
     image: "Dockerfile"
     args:
-        # - ${{ inputs.server_id }}
-        # - ${{ inputs.server_url }}
-        # - ${{ inputs.distribution_url }}
-        # - ${{ inputs.access_type }}
-        # - ${{ inputs.username }}
-        # - ${{ inputs.password }}
-        # - ${{ inputs.access_token }}
-        # - ${{ inputs.api_key }}
+        - ${{ inputs.server_id }}
+        - ${{ inputs.server_url }}
+        - ${{ inputs.distribution_url }}
+        - ${{ inputs.access_type }}
+        - ${{ inputs.username }}
+        - ${{ inputs.password }}
+        - ${{ inputs.access_token }}
+        - ${{ inputs.api_key }}
         - ${{ inputs.cli_cmd }}
