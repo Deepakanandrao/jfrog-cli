@@ -6,7 +6,7 @@ COPY entrypoint.sh /entrypoint.sh
 ## Disallow storing credentials
 ENV JFROG_CLI_OFFER_CONFIG=false
 
-## Install cURL, get the JFrog CLI, and make the script executable
+## Install cURL,  get the JFrog CLI, and make the script executable
 RUN apk update &&\
     yes | apk add curl &&\
     rm -rf /var/lib/apt/lists/* &&\
