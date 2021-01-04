@@ -1,15 +1,10 @@
 #!/bin/sh
-
-#Starting shell scripts with set -e is considered a best practice,
-#since it is usually safer to abort the script if some error occurs. 
-#If a command may fail harmlessly,
-
 set -e
 
 
-if [$access_type = 'username-password'];
-    then 
-       sh -c "jfrog rt c $server_id --interactive=false --basic-auth-only=true --url=$server_url --user=$username --password=$password"
+if [$access_type = "username-password"];
+then 
+    sh -c "jfrog rt c $server_id --interactive=false --basic-auth-only=true --url=$server_url --user=$username --password=$password"
 fi
 if [$access_type == 'api-key'];
      then
