@@ -37,9 +37,9 @@ then
     if [$access_type = 'username-password']
     then 
        sh -c "jfrog rt c $server_id --interactive=false --basic-auth-only=true --url=$server_url --user=$username --password=$password"
-#     elif [$INPUT_ACCESS_TYPE == 'api-key']
-#     then
-#         jfrog rt c "$INPUT_SERVER_ID" --interactive=false --basic-auth-only=true --url="$INPUT_SERVER_URL" --apikey="$INPUT_API_KEY"
+     elif [$access_type == 'api-key']
+     then
+       sh -c "jfrog rt c $server_id --interactive=false --basic-auth-only=true --url=$server_url --apikey=$api_key"
     elif [$access_type = 'access-token']
     then 
        sh -c "jfrog rt c $server_id --interactive=false --basic-auth-only=true --url=$server_url --access-token=$api_key"
