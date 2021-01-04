@@ -25,7 +25,7 @@ set -e
 # $INPUT_CLI_CMD:
    
 
-sudo apt install -y jfrog-cli
+apt install -y jfrog-cli
 jfrog rt config
 
 if ! ["$INPUT_SERVER_ID"] 
