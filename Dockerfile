@@ -1,5 +1,5 @@
 # Base image
-FROM alpine:latest
+FROM ubuntu:latest
 
 # installes required packages for our script
 RUN apk add --no-cache \
