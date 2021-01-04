@@ -27,7 +27,6 @@ set -e
    
 
 # sudo apt install -y jfrog-cli
-jfrog rt config
 
 if ! ["$INPUT_SERVER_ID"] 
     then
