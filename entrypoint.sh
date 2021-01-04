@@ -28,6 +28,12 @@ set -e
 
 # sudo apt install -y jfrog-cli
 
+echo "$INPUT_SERVER_ID"
+echo "$input_server_id"
+echo "$server_id"
+echo "$server_id"
+sh -c "echo $server_id"
+
 if ! ["$INPUT_SERVER_ID"] 
     then
         "$INPUT_SERVER_ID" = "JFrog Artifactory Server"
