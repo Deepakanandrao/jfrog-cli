@@ -34,9 +34,9 @@ echo "$server_id"
 echo "$server_id"
 sh -c "echo $server_id"
 
-if ! ["$INPUT_SERVER_ID"] 
+if ! [$server_id]
     then
-        "$INPUT_SERVER_ID" = "JFrog Artifactory Server"
+        $server_id = "JFrog Artifactory Server"
 fi
 
 if ["$INPUT_SERVER_URL" && "$INPUT_ACCESS_TYPE" && (("$INPUT_USERNAME" && "$INPUT_PASSWORD") || "$INPUT_ACCESS_TOKEN")] 
