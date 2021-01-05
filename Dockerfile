@@ -7,8 +7,8 @@ COPY entrypoint.sh /entrypoint.sh
 ENV JFROG_CLI_OFFER_CONFIG=false
 
 ## Install cURL,  get the JFrog CLI, and make the script executable
-RUN apt update &&\
-    yes | apk add curl &&\
+RUN apt-get update &&\
+    yes | apt-get install curl &&\
     rm -rf /var/lib/apt/lists/* &&\
     curl -fL https://getcli.jfrog.io | sh &&\
     mv jfrog /bin &&\
