@@ -1,10 +1,10 @@
 # action.yaml
 name: "JFrog CLI"
+description: "Connects to JFrog Artifactory and executes JFrog CLI commands"
 author: "Deep Anandrao"
 branding:
     icon: "command"
     color: "orange"
-description: "Connects to JFrog Artifactory and executes JFrog CLI commands"
 runs:
     using: "docker"
     image: "Dockerfile"
