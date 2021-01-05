@@ -12,8 +12,10 @@ RUN apt-get update &&\
     rm -rf /var/lib/apt/lists/* &&\
     curl -fL https://getcli.jfrog.io | sh &&\
     mv jfrog /bin &&\
+    apt-get install openjdk-8-jdk &&\
     chmod +x entrypoint.sh &&\
-    mv entrypoint.sh /bin
+    mv entrypoint.sh /bin &&\
+    java -version
 
 ## When the container starts, run the entrypoint script
 ENTRYPOINT ["entrypoint.sh"]
