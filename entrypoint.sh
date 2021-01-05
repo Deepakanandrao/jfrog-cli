@@ -5,7 +5,7 @@ if [ "$ACCESS_TYPE" = "username-password" ]
 then 
     sh -c 'jfrog rt c "$SERVER_ID" --interactive=false --basic-auth-only=true --url="$SERVER_URL" --user="$USERNAME" --password="$PASSWORD"'
 fi
-if [ "$ACCESS_TYPE" == "api-key" ];
+if [ "$ACCESS_TYPE" = "api-key" ];
 then
        sh -c 'jfrog rt c "$SERVER_ID" --interactive=false --basic-auth-only=true --url="$SERVER_URL" --apikey="$API_KEY"'
 fi
