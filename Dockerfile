@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM ubuntu
 
 ## Copy code from your action repository to the filesystem path `/` in the container
 COPY entrypoint.sh /entrypoint.sh
@@ -7,7 +7,7 @@ COPY entrypoint.sh /entrypoint.sh
 ENV JFROG_CLI_OFFER_CONFIG=false
 
 ## Install cURL,  get the JFrog CLI, and make the script executable
-RUN apk update &&\
+RUN apt update &&\
     yes | apk add curl &&\
     rm -rf /var/lib/apt/lists/* &&\
     curl -fL https://getcli.jfrog.io | sh &&\
