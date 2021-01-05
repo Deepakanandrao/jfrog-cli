@@ -5,46 +5,6 @@ branding:
     icon: "command"
     color: "orange"
 description: "Connects to JFrog Artifactory and executes JFrog CLI commands"
-inputs:
-#     server_id:
-#         description: "Server to be identified with. Default - JFrog Artifactory Server"
-#         required: false
-
-#     server_url:
-#         description: "Your Jfrog Artifactory Server url"
-#         required: true
-
-#     distribution_url:
-#         description: " Distribution URL. Default - none"
-#         required: false
-
-#     access_type:
-#         description: "Leave blank for username and password or apikey for api key "
-#         required: true
-
-#     username:
-#         description: "Leave blank for access-token or apikey for api key "
-#         required: true
-
-#     Password:
-#         description: "Leave blank is using apikey or access-token"
-#         required: false
-
-#     access_token:
-#         description: "Leave blank is using password"
-#         required: false
-
-    cli_cmd:
-        description: "JFrog artifactory CLI commands to be executed"
-        required: false
-        default: jfrog rt ping
-
-outputs:
-    cli_output:
-        description: "Output of the last executed command"
-
 runs:
     using: "docker"
     image: "Dockerfile"
-    args:
-        - ${{ inputs.cli_cmd }}
