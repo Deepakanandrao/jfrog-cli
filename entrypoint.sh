@@ -1,18 +1,24 @@
 #!/bin/sh
 set -e
 
+# Update the index of available packages:
+ apk update
 
-if [$access_type = "username-password"];
+#Install jfrog-cli apk package:
+apk add --upgrade jfrog-cli
+
+
+if ["$ACCESS_TYPE" = "username-password"]
 then 
-    sh -c "jfrog rt c $server_id --interactive=false --basic-auth-only=true --url=$server_url --user=$username --password=$password"
+    sh -c 'jfrog rt c "$SERVER_ID" --interactive=false --basic-auth-only=true --url="$SERVER_URL" --user="$USERNAME" --password="$PASSWORD"'
 fi
-if [$access_type == 'api-key'];
-     then
-       sh -c "jfrog rt c $server_id --interactive=false --basic-auth-only=true --url=$server_url --apikey=$api_key"
+if ["$ACCESS_TYPE" == "api-key"];
+then
+       sh -c 'jfrog rt c "$SERVER_ID" --interactive=false --basic-auth-only=true --url="$SERVER_URL" --apikey="$API_KEY"'
 fi
-if [$access_type = 'access-token'];
-    then 
-       sh -c "jfrog rt c $server_id --interactive=false --basic-auth-only=true --url=$server_url --access-token=$api_key"
+if ["$access_type" = "access-token"]
+then 
+       sh -c 'jfrog rt c "$SERVER_ID" --interactive=false --basic-auth-only=true --url="$SERVER_URL" --access-token="$API_KEY"'
 fi
     
 for cmd in "$@"; do
