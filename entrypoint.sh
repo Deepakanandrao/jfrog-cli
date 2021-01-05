@@ -1,13 +1,6 @@
 #!/bin/sh
 set -e
 
-# Update the index of available packages:
- apk update
-
-#Install jfrog-cli apk package:
-apk add --upgrade jfrog-cli
-
-
 if ["$ACCESS_TYPE" = "username-password"]
 then 
     sh -c 'jfrog rt c "$SERVER_ID" --interactive=false --basic-auth-only=true --url="$SERVER_URL" --user="$USERNAME" --password="$PASSWORD"'
