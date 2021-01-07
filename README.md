@@ -47,7 +47,7 @@ It downloads, installs, and configures JFrog CLI with the given details.
 $ jfrog rt command-name global-options command-options arguments
 ```
 ### Uploading Files
-######Upload all files to the target repository
+###### Upload all files to the target repository
 ```
 $ jfrog rt u "(*).tgz" my-local-repo/{1}/ --recursive=false
 ```
