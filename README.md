@@ -1,4 +1,4 @@
-# JFrog CLI Connect v2
+# JFrog CLI Connect v3
 
 JFrog CLI Connect is simple Docker container-based GitHub action that allows users to connect to Artifactory and executes commands.
 It downloads, installs, and configures JFrog CLI with the given details.
@@ -25,7 +25,7 @@ It downloads, installs, and configures JFrog CLI with the given details.
 
   ```yaml
     name: Connect to Artifactory
-      uses: Deepakanandrao/jfrog-cli@v2
+      uses: Deepakanandrao/jfrog-cli@v3
       with:
         cli_cmd: |                                      # commands to be excuted
         'jfrog rt ping'
